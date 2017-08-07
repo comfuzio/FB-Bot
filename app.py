@@ -78,8 +78,6 @@ def webhook():
                     u_count = User_id.query.filter_by(name = sender_name).first()
                     log(u_count)
                     if u_count is None:
-                        
-                        new_time = int(time.time())
                         db_add = User_id(name=sender_name, message_id=sender_id)
                         db.session.add(db_add)
                         db.session.commit()
